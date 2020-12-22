@@ -3,28 +3,28 @@ const user = {
     age: 20,
     hobby: 'html',
     premium: true,
-
+    mood: 'happy',
+    newUser(){
+        console.log(this)
+        this.hobby = 'skydiving';
+        this.premium = false;
+        const keys = Object.keys(user);
+        // console.log(keys)
+        for (const key of keys){
+            console.log(key);
+            // console.log(this);  
+        }
+    }
 };
 
-const users = () => {
-user.mood = 'happy';
-user.hobby = 'skydiving';
-user.premium = false;
-console.log(user);
 
-const keys = Object.keys(user);
-// console.log(keys);
-
-for (const key of keys) {
-    console.log(key);
-    console.log(user[key]);
-}
+user.newUser();
 
 
 
-}
 
-users();
+
+
 
 
 

@@ -6,17 +6,15 @@ const products = [
   ];
   
   const calculateTotalPrice = function(allProdcuts, productName) {
-    let total = 0;
-    for(const product of Object.values(allProdcuts)){
-        console.log(product.price) 
-        total = product.price * product.quantity
-    }
-    for(const product of Object.values(productName)){
-        console.log(product)
-    }
+
+    for(const product of allProdcuts) {
+      if(product.name == productName) {
+          return product.price * product.quantity
+      }
+  }
     
 
-    return total;
+   
   };
   
   
@@ -26,3 +24,5 @@ const products = [
   console.log(calculateTotalPrice(products, 'Радар')); // 5200
   
   console.log(calculateTotalPrice(products, 'Дроид')); // 2800
+
+  
